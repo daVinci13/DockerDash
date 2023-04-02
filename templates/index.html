@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DockerDash</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/materialize.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">DockerDash</a>
+			<a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="/settings">Settings</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-menu">
+		<li><a href="/settings">Settings</a></li>
+	</ul>
+
+	<div class="container">
+		<div class="row search">
+			<form id="search-form" action="https://www.google.com/search" method="get" target="_self">
+				<input type="text" name="q" placeholder="Search Google...">
+				<button type="submit">Search</button>
+			</form>
+		</div>
+		
+		<div class="row">
+			{% for container in container_info %}
+			<div class="col s12 m6 l3">
+				<div class="card">
+					<a href="{{ container.url }}">
+						<div class="card-content">
+								<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#{{ container.icon.color }}" class="container-icon">
+									<title>{{ container.name }}</title>
+									<path d="{{ container.icon.path }}" />
+								</svg>
+								<span class="card-title">{{ container.name }}</span>
+						</div>
+					  </a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+	<script>
+		$(document).ready(function(){
+			$('.sidenav').sidenav();
+		});
+	</script>
+</body>
+</html>

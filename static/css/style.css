@@ -1,0 +1,91 @@
+body {
+	background-color: #f2f2f2;
+}
+
+.container {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.container-icon {
+	height: 64px;
+	margin: 2px;
+	width: 64px;
+}
+
+.col.s12.m6.l3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	background-color: #ababab;
+	color: white;
+	height: 128px;
+    width: 128px;
+	text-align: center;
+}
+
+.card-title {
+	font-size: 10px!;
+}
+
+.card-action a {
+	color: white;
+	font-weight: bold;
+}
+
+nav {
+	background-color: #333;
+}
+
+nav .brand-logo {
+	font-size: 24px;
+}
+
+nav ul li a {
+	font-size: 18px;
+}
+
+@media only screen and (max-width: 992px) {
+	nav .brand-logo {
+		font-size: 18px;
+	}
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+    height: 40px;
+    padding: 5px;
+}
+
+#search-form input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+#search-form button[type="submit"] {
+    background-color: #4285f4;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
